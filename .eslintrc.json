@@ -36,6 +36,7 @@
     "prettier"
   ],
   "rules": {
+    "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
     "prettier/prettier": "off",
     "no-use-before-define": "off",
     "react/jsx-filename-extension": [
