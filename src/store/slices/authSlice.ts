@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { RootState } from '../rootReducer';
 
 const initialState = {
     token: `${process.env.REACT_APP_TOKEN}`,
@@ -15,6 +14,5 @@ const authSlice = createSlice({
     },
 });
 
-export const getToken = (state: RootState): string => state.auth.token;
 export const { setToken } = authSlice.actions;
 export default authSlice.reducer;
