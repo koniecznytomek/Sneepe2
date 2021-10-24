@@ -1,10 +1,11 @@
 import React from 'react';
 
+// components
+import Root from 'views/Root';
+
 const App: React.FunctionComponent = () => {
     return (
-        <div className='App'>
-            <div>app</div>
-        </div>
+       <Root />
     );
 };
 
