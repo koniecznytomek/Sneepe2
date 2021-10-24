@@ -1,10 +1,15 @@
 import React from 'react';
 
+// router
+import { HashRouter } from 'react-router-dom';
+
 const App: React.FunctionComponent = () => {
     return (
-        <div className='App'>
-            <div>app</div>
-        </div>
+        <HashRouter>
+            <div className='App'>
+                <div>app</div>
+            </div>
+        </HashRouter>
     );
 };
 
