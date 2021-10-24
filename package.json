@@ -2,6 +2,7 @@
   "name": "sneepe2",
   "version": "0.1.0",
   "private": true,
+  "proxy": "https://github.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.21",
     "@reduxjs/toolkit": "^1.6.2",
+    "axios": "^0.23.0",
     "copy-to-clipboard": "^3.3.1",
     "graphql": "^15.6.1",
     "query-string": "^7.0.1",
