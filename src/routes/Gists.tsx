@@ -4,17 +4,17 @@ import React from 'react';
 import { Route, Switch } from 'react-router';
 
 // components
-import Gist from 'components/Gist';
+import File from 'components/File';
 
 // types
 import { Routes } from 'types/routes';
 
-const Content = () => {
+const Gists: React.FunctionComponent = () => {
     return (
         <Switch>
-            <Route exact path={Routes.GIST} component={Gist} />
+            <Route exact path={Routes.GIST} component={File} />
         </Switch>
     );
 };
 
-export default Content;
+export default Gists;
