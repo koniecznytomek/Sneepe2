@@ -16,6 +16,8 @@
     "@apollo/client": "^3.3.21",
     "@reduxjs/toolkit": "^1.6.2",
     "copy-to-clipboard": "^3.3.1",
+    "graphql": "^15.6.1",
+    "query-string": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",

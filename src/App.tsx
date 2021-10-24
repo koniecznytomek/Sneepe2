@@ -1,21 +1,25 @@
 import React from 'react';
+import { ApolloProvider } from '@apollo/client';
 
 // components
 import Root from 'views/Root';
-import Login from 'views/Login';
 
-// redux
-import { useSelector } from 'react-redux';
-import { getToken } from 'store/selectors';
+// hooks
+import useApolloClient from 'hooks/useApolloClient';
 
+// router
+import { HashRouter } from 'react-router-dom';
 
 const App: React.FunctionComponent = () => {
-    const token = useSelector(getToken);
+
+    const [client] = useApolloClient();
 
     return (
-        <>
-            {token ? <Root /> : <Login />}
-        </>
+        <HashRouter>
+            <ApolloProvider client={client}>
+             <Root />
+            </ApolloProvider>
+        </HashRouter>
     );
 };
 
