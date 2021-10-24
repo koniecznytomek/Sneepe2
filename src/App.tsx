@@ -1,11 +1,11 @@
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      sneepe
-    </div>
-  );
-}
+const App: React.FunctionComponent = () => {
+    return (
+        <div className='App'>
+            <div>app</div>
+        </div>
+    );
+};
 
 export default App;
