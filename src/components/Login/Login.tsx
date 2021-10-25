@@ -8,6 +8,10 @@ import { setToken } from 'store/slices/authSlice';
 // styles
 import { Container } from './style';
 
+interface Auth {
+    access_token: string;
+}
+
 const Login: React.FunctionComponent = () => {
     const dispatch = useDispatch();
 
@@ -21,18 +25,15 @@ const Login: React.FunctionComponent = () => {
     useEffect(() => {
         if (value) {
             const getAccessToken = async () => {
-                await axios.post('/login/oauth/access_token', {
+                await axios.post<Auth>('/login/oauth/access_token', {
                     client_id: client,
                     client_secret: secret,
                     code: value,
                 }, {
-                    headers: {
-                        'Accept': 'application/json',
-                    },
-                }).then((resp: any) => {
-                    if (resp.data.access_token) {
-                        console.log(resp.data.access_token);
-                        dispatch(setToken(resp.data.access_token));
+                    headers: { 'Accept': 'application/json' },
+                }).then((response) => {
+                    if (response.data.access_token) {
+                        dispatch(setToken(response.data.access_token));
                     }
                 }).catch((e) => console.log(e));
 
@@ -43,7 +44,9 @@ const Login: React.FunctionComponent = () => {
 
     return (
         <Container>
-            <a href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client}&redirect_uri=${redirect}`}>github</a>
+            <a href={`https://github.com/login/oauth/authorize?scope=user&client_id=${client}&redirect_uri=${redirect}`}>
+                <button className='btn' type='button'>Sign In</button>
+            </a>
         </Container>
     );
 };

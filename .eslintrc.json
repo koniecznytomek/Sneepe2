@@ -37,6 +37,7 @@
     "prettier"
   ],
   "rules": {
+    "camelcase": "off",
     "no-shadow": "off",
     "@typescript-eslint/no-shadow": ["error"],
     "no-unused-vars": "off",
