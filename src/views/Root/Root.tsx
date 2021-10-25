@@ -14,7 +14,8 @@ const Root: React.FunctionComponent = () => {
 
     return (
         <Container>
-            {!token ? <div>app</div> : <Authorization />}
+            {token}
+            {token ? <div>app</div> : <Authorization />}
         </Container>
     );
 };

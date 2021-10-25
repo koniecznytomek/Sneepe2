@@ -1,11 +1,18 @@
 import React, { useEffect } from 'react';
 import axios from 'axios';
 
+// redux
+import { useDispatch } from 'react-redux';
+import { setToken } from 'store/slices/authSlice';
+
 // styles
 import { Container } from './style';
 
 const Login: React.FunctionComponent = () => {
+    const dispatch = useDispatch();
+
     const redirect = 'http://localhost:3000/auth';
+
     const client = `${process.env.REACT_APP_CLIENT_ID}`;
     const secret = `${process.env.REACT_APP_CLIENT_SECRET}`;
 
@@ -13,7 +20,7 @@ const Login: React.FunctionComponent = () => {
 
     useEffect(() => {
         if (value) {
-            const a = async () => {
+            const getAccessToken = async () => {
                 await axios.post('/login/oauth/access_token', {
                     client_id: client,
                     client_secret: secret,
@@ -23,17 +30,16 @@ const Login: React.FunctionComponent = () => {
                         'Accept': 'application/json',
                     },
                 }).then((resp: any) => {
-                    if (resp.data) {
+                    if (resp.data.access_token) {
                         console.log(resp.data.access_token);
+                        dispatch(setToken(resp.data.access_token));
                     }
-                });
+                }).catch((e) => console.log(e));
 
             };
-            a();
+            getAccessToken();
         }
-
-    });
-
+    }, []);
 
     return (
         <Container>
