@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const initialState = {
-    token: `${process.env.REACT_APP_TOKEN}`,
+    token: '',
+    // token: `${process.env.REACT_APP_TOKEN}`,
 };
 
 const authSlice = createSlice({
