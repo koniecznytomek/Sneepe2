@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: 'SF-Medium';
-    src: url('../assets/fonts/sf-medium.woff2') format('woff2'),
-    url('../assets/fonts/sf-medium.woff') format('woff');
-  }
+  //@font-face {
+  //  font-family: 'SF-Medium';
+  //  src: url('../assets/fonts/sf-medium.woff2') format('woff2'),
+  //  url('../assets/fonts/sf-medium.woff') format('woff');
+  //}
 
   @font-face {
     font-family: 'SF-Light';

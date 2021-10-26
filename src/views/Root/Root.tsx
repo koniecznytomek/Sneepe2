@@ -2,7 +2,7 @@ import React from 'react';
 
 // redux
 import { useSelector } from 'react-redux';
-import { getToken, getTheme } from 'store/selectors';
+import { getTheme } from 'store/selectors';
 
 // routes
 import Authorization from 'routes/Authorization';
@@ -14,13 +14,12 @@ import { Container } from './style';
 
 const Root: React.FunctionComponent = () => {
     const theme = useSelector(getTheme);
-    const token = useSelector(getToken);
 
     return (
         <ThemeProvider theme={{ theme }}>
             <GlobalStyle />
             <Container>
-                {token ? <div>app</div> : <Authorization />}
+               <Authorization />
             </Container>
         </ThemeProvider>
     );
