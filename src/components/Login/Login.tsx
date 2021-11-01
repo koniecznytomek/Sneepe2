@@ -17,7 +17,7 @@ const Login: React.FunctionComponent = () => {
     const dispatch = useDispatch();
     const [setFetch] = useFetchAllGists();
 
-    const redirect = 'http://localhost:3000/auth';
+    const redirect = 'http://localhost:3000/login';
 
     const client = `${process.env.REACT_APP_CLIENT_ID}`;
     const secret = `${process.env.REACT_APP_CLIENT_SECRET}`;

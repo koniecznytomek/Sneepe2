@@ -1,5 +1,5 @@
 export enum Routes {
     APP_ROOT = '/',
-    APP_AUTH = '/auth',
+    APP_LOGIN = '/login',
     GIST = '/gist',
 }

@@ -12,7 +12,7 @@ import { Routes } from 'types/routes';
 const Authorization: React.FunctionComponent = () => {
     return (
         <Switch>
-            <Route exact path={Routes.APP_ROOT} component={Login} />
+            <Route exact path={Routes.APP_LOGIN} component={Login} />
         </Switch>
     );
 };
