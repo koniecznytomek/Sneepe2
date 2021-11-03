@@ -18,10 +18,10 @@ const gistsSlice = createSlice({
         deleteGist: (state, { payload }: PayloadAction<string>) => {
             state.gists = state.gists.filter(gist => gist.name !== payload);
         },
-        // addFile: (state, { payload }: PayloadAction<File>) => {
-        //     const gist = state.gists.find(gist => gist.name === payload.name);
-        //     gist && gist.files.push({ name: payload.filename, text: payload.text });
-        // },
+        addFile: (state, { payload }: PayloadAction<File>) => {
+            const gist = state.gists.find(item => item.name === payload.name);
+            gist?.files.push({ name: payload.filename, text: payload.text });
+        },
         updateFile: (state, { payload }: PayloadAction<{ name: string; filename: string; data: Files }>) => {
             state.gists = state.gists.map(gist => {
                 if (gist.name === payload.name) {
@@ -30,7 +30,7 @@ const gistsSlice = createSlice({
                         files: gist.files.map(file =>
                             file.name === payload.filename
                                 ? { ...file, name: payload.data.name, text: payload.data.text }
-                                : file
+                                : file,
                         ),
                     };
                 }
@@ -57,7 +57,7 @@ const gistsSlice = createSlice({
                         files: gist.files.map(file =>
                             file.name === payload.filename
                                 ? { ...file, text: payload.text, name: payload.newFilename }
-                                : file
+                                : file,
                         ),
                     };
                 }
@@ -67,6 +67,6 @@ const gistsSlice = createSlice({
     },
 });
 
-export const { addGists, addGist, updateFile, deleteFile, editNote } = gistsSlice.actions;
+export const { addGists, addGist, addFile, updateFile, deleteFile, editNote } = gistsSlice.actions;
 
 export default gistsSlice.reducer;
