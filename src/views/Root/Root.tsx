@@ -12,7 +12,7 @@ import Gists from 'routes/Gists';
 // styles
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/global';
-import { Container } from './style';
+import { Container, TitleBar } from './style';
 
 const Root: React.FunctionComponent = () => {
     const theme = useSelector(getTheme);
@@ -26,6 +26,7 @@ const Root: React.FunctionComponent = () => {
     return (
         <ThemeProvider theme={{ theme }}>
             <GlobalStyle />
+            <TitleBar />
             <Container>
                 <Authorization />
                 <Gists />

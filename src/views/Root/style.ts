@@ -6,3 +6,13 @@ export const Container = styled.div`
   height: 100vh;
   background: ${primaryBackground};
 `;
+
+export const TitleBar = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+`;
