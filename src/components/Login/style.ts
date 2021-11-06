@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { mainText, primaryBackground } from 'styles';
 
 export const Container = styled.div`
   display: flex;
@@ -10,10 +9,10 @@ export const Container = styled.div`
 
   a > .btn {
     padding: 15px 40px;
-    color: ${mainText};
-    border: 1px solid #fff;
-    border-radius: 5px;
-    background: ${primaryBackground};
+    color: #202020;
+    border-radius: 2px;
+    border: 0;
+    background: #fff;
     cursor: pointer;
   }
 `;

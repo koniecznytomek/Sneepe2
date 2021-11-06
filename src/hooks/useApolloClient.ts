@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache } from '@apollo/client';
+import { ApolloClient, InMemoryCache, NormalizedCacheObject } from '@apollo/client';
 import { relayStylePagination } from '@apollo/client/utilities';
 
 // types
@@ -8,7 +8,7 @@ import { Url } from 'types/enums';
 import { useSelector } from 'react-redux';
 import { getToken } from '../store/selectors';
 
-const useApolloClient = () => {
+const useApolloClient = (): ApolloClient<NormalizedCacheObject>[] => {
     const token = useSelector(getToken);
 
     const client = new ApolloClient({
