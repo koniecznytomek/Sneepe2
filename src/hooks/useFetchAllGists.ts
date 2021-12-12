@@ -8,6 +8,7 @@ import { addCollections } from 'store/slices/collectionsSlice';
 
 // types
 import { Gists } from '../types';
+import { ConfigFiles } from '../types/enumes';
 
 interface IViewer {
     viewer: {
@@ -56,11 +57,11 @@ const useFetchAllGists = (): [(setFetch: boolean) => void] => {
 
                 // Setup collections
                 const config = gists.find((gist) =>
-                    gist.files.some((file) => file.name === 'sneepe.collections.json'),
+                    gist.files.some((file) => file.name === ConfigFiles.COLLECTIONS),
                 );
 
                 if (config) {
-                    const collectionsConfigFile = config.files.find((file) => file.name === 'sneepe.collections.json');
+                    const collectionsConfigFile = config.files.find((file) => file.name === ConfigFiles.COLLECTIONS);
 
                     const json = JSON.parse(collectionsConfigFile ? collectionsConfigFile.text : '');
                     dispatch(addCollections(json));
@@ -68,6 +69,8 @@ const useFetchAllGists = (): [(setFetch: boolean) => void] => {
                     // todo - create new collections config file
                     dispatch(addCollections([]));
                 }
+
+                // setFetch(false);
             }
         }
     }, [gists, all, dispatch]);

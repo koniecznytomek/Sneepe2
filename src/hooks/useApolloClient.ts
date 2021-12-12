@@ -2,7 +2,7 @@ import { ApolloClient, InMemoryCache, NormalizedCacheObject } from '@apollo/clie
 import { relayStylePagination } from '@apollo/client/utilities';
 
 // types
-import { Url } from 'types/enums';
+import { Url } from 'types/enumes';
 
 // redux
 import { useSelector } from 'react-redux';

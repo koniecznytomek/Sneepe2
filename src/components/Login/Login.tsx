@@ -5,17 +5,19 @@ import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { setToken } from 'store/slices/authSlice';
 
+// hooks
+import useFetchAllGists from 'hooks/useFetchAllGists';
+
 // styles
 import { Container } from './style';
-import useFetchAllGists from '../../api/useFetchAllGists';
 
 interface Auth {
     access_token: string;
 }
 
-const Login: React.FunctionComponent = () => {
-    const dispatch = useDispatch();
+const Login: React.FC = () => {
     const [setFetch] = useFetchAllGists();
+    const dispatch = useDispatch();
 
     const redirect = 'http://localhost:3000/login';
 

@@ -1,10 +1,8 @@
-import Gist from '../routes/Gist';
-
-export interface GistsState {
-    readonly gists: Gists[];
+export interface IGistsState {
+    readonly gists: IGists[];
 }
 
-export interface Gists {
+export interface IGists {
     readonly name: string;
     readonly description: string;
     readonly url: string;
@@ -15,10 +13,10 @@ export interface Gists {
     readonly isFork: boolean;
     readonly viewerHasStarred: boolean;
     readonly stargazerCount: number;
-    readonly files: Files[];
+    readonly files: IFiles[];
 }
 
-export interface Files {
+export interface IFiles {
     readonly name: string;
     readonly text: string;
     readonly extension?: string;
@@ -29,22 +27,22 @@ export interface Files {
     };
 }
 
-export interface File {
+export interface IFile {
     readonly name: string;
     readonly filename: string;
     readonly text: string;
 }
 
-export interface CollectionsState {
-    readonly collections: Collections[];
+export interface ICollectionsState {
+    readonly collections: ICollections[];
 }
 
-export interface Collections {
+export interface ICollections {
     readonly name: string;
     readonly gists: string[];
 }
 
-export interface Collection {
+export interface ICollection {
     readonly name: string;
     readonly gist: string;
 }

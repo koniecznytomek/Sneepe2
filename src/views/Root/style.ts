@@ -6,3 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   background: ${primaryBackground};
 `;
+
+export const Main = styled.div`
+//
+`;

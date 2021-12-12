@@ -1,18 +1,20 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
+// components
+import Auth from '../Auth';
+import Folders from '../Folders';
+import List from '../List';
+import Content from '../Content';
+
 // redux
 import { useSelector } from 'react-redux';
 import { getTheme, getToken } from 'store/selectors';
 
-// routes
-import Authorization from 'routes/Authorization';
-import Gists from 'routes/Gists';
-
 // styles
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/global';
-import { Container } from './style';
+import { Container, Main } from './style';
 
 const Root: React.FunctionComponent = () => {
     const theme = useSelector(getTheme);
@@ -27,8 +29,18 @@ const Root: React.FunctionComponent = () => {
         <ThemeProvider theme={{ theme }}>
             <GlobalStyle />
             <Container>
-                <Authorization />
-                <Gists />
+                <div>
+                   <Auth />
+                </div>
+                <Main>
+                    <div><Folders /></div>
+                    <div>
+                        <List />
+                    </div>
+                    <div>
+                        <Content />
+                    </div>
+                </Main>
             </Container>
         </ThemeProvider>
     );
