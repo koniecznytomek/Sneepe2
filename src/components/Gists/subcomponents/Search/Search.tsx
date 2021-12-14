@@ -10,7 +10,7 @@ type Props = {
     readonly onSearch: (e: ChangeEvent) => void;
 }
 
-const Search = ({ onSearch }: Props) => {
+const Search: React.FC<Props> = ({ onSearch }: Props) => {
     return (
         <Container>
             <form>

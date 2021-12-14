@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Collections: React.FunctionComponent = () => {
+const Collections: React.FC = () => {
     return <>Collections</>
 };
 

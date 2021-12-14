@@ -7,8 +7,8 @@ import { addGists } from 'store/slices/gistsSlice';
 import { addCollections } from 'store/slices/collectionsSlice';
 
 // types
-import { Gists } from '../types';
-import { ConfigFiles } from '../types/enumes';
+import { IGists } from 'types';
+import { ConfigFiles } from 'types/enumes';
 
 interface IViewer {
     viewer: {
@@ -25,7 +25,7 @@ interface IViewer {
 const useFetchAllGists = (): [(setFetch: boolean) => void] => {
     const [fetch, setFetch] = useState<boolean>(false);
     const [all, setAll] = useState<IViewer>();
-    const [gists, setGists] = useState<Gists[]>([]);
+    const [gists, setGists] = useState<IGists[]>([]);
 
     const { data, fetchMore } = useQuery(ALL_GISTS);
     const dispatch = useDispatch();

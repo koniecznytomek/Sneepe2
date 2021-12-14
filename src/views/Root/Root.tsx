@@ -29,11 +29,11 @@ const Root: React.FunctionComponent = () => {
         <ThemeProvider theme={{ theme }}>
             <GlobalStyle />
             <Container>
-                <div>
-                   <Auth />
-                </div>
+                <Auth />
                 <Main>
-                    <div><Folders /></div>
+                    <div>
+                        <Folders />
+                    </div>
                     <div>
                         <List />
                     </div>

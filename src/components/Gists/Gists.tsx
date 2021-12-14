@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Gists: React.FunctionComponent = () => {
+const Gists: React.FC = () => {
     return <>Gist</>
 };
 

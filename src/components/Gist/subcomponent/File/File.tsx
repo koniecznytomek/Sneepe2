@@ -1,6 +1,6 @@
 import React from 'react';
 
-const File: React.FunctionComponent = () => {
+const File: React.FC = () => {
     return <>Gist</>
 };
 

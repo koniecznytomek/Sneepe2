@@ -11,12 +11,13 @@ import { getTheme } from 'store/selectors';
 // styles
 import { Container } from './style';
 
-const ThemeToggler = () => {
+const ThemeToggler: React.FC = () => {
     const dispatch = useDispatch();
     const theme = useSelector(getTheme);
 
-    const handleToggler = () => {
-        if (theme === 'light') dispatch(setTheme('dark'));
+
+    const handleToggler = (): void => {
+        dispatch(setTheme('dark'));
     };
 
     return (
