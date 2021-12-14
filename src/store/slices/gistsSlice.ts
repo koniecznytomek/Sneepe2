@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { GistsState, Gists, File, Files } from 'types/index';
+import { IGistsState, IGists, IFile, IFiles } from 'types/index';
 
-const initialState: GistsState = {
+const initialState: IGistsState = {
     gists: [],
 };
 
@@ -9,20 +9,20 @@ const gistsSlice = createSlice({
     name: 'gists',
     initialState,
     reducers: {
-        addGists: (state, { payload }: PayloadAction<Gists[]>) => {
+        addGists: (state, { payload }: PayloadAction<IGists[]>) => {
             state.gists = payload;
         },
-        addGist: (state, { payload }: PayloadAction<Gists>) => {
+        addGist: (state, { payload }: PayloadAction<IGists>) => {
             state.gists.push(payload);
         },
         deleteGist: (state, { payload }: PayloadAction<string>) => {
             state.gists = state.gists.filter(gist => gist.name !== payload);
         },
-        addFile: (state, { payload }: PayloadAction<File>) => {
+        addFile: (state, { payload }: PayloadAction<IFile>) => {
             const gist = state.gists.find(item => item.name === payload.name);
             gist?.files.push({ name: payload.filename, text: payload.text });
         },
-        updateFile: (state, { payload }: PayloadAction<{ name: string; filename: string; data: Files }>) => {
+        updateFile: (state, { payload }: PayloadAction<{ name: string; filename: string; data: IFiles }>) => {
             state.gists = state.gists.map(gist => {
                 if (gist.name === payload.name) {
                     return {
@@ -49,7 +49,7 @@ const gistsSlice = createSlice({
             });
         },
 
-        editNote: (state, { payload }: PayloadAction<File & { newFilename: string }>) => {
+        editNote: (state, { payload }: PayloadAction<IFile & { newFilename: string }>) => {
             state.gists = state.gists.map(gist => {
                 if (gist.name === payload.name) {
                     return {

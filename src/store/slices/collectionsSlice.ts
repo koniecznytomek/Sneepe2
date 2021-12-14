@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CollectionsState, Collections, Collection } from 'types';
+import { ICollectionsState, ICollections, ICollection } from 'types';
 
-const initialState: CollectionsState = {
+const initialState: ICollectionsState = {
     collections: [],
 };
 
@@ -9,13 +9,13 @@ const collectionsSlice = createSlice({
     name: 'collections',
     initialState,
     reducers: {
-        addCollections: (state, { payload }: PayloadAction<Collections[]>) => {
+        addCollections: (state, { payload }: PayloadAction<ICollections[]>) => {
             state.collections = payload;
         },
         addCollection: (state, { payload }: PayloadAction<string>) => {
             state.collections.push({ name: payload, gists: [] });
         },
-        addToCollection: (state, { payload }: PayloadAction<Collection>) => {
+        addToCollection: (state, { payload }: PayloadAction<ICollection>) => {
             const collection = state.collections.find(item => item.name === payload.name);
             collection?.gists.push(payload.gist);
         },
