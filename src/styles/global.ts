@@ -1,31 +1,22 @@
 import { createGlobalStyle } from 'styled-components';
+import SFMedium from 'assets/fonts/sf-medium.woff2';
 
 export const GlobalStyle = createGlobalStyle`
-  //@font-face {
-  //  font-family: 'SF-Medium';
-  //  src: url('../assets/fonts/sf-medium.woff2') format('woff2'),
-  //  url('../assets/fonts/sf-medium.woff') format('woff');
-  //}
-
   @font-face {
-    font-family: 'SF-Light';
-    src: url('../assets/fonts/sf-light.woff2') format('woff2'),
-    url('../assets/fonts/sf-light.woff') format('woff');
+    font-family: 'SFMedium';
+    src: local('SFMedium'), local('SFMedium'),
+    url(${SFMedium}) format('woff2');
+    font-weight: 500;
+    font-style: normal;
   }
-
-  @font-face {
-    font-family: 'SF-Bold';
-    src: url('../assets/fonts/sf-bold.woff2') format('woff2'),
-    url('../assets/fonts/sf-bold.woff') format('woff');
-  }
-
+  
   * {
     -webkit-tap-highlight-color: transparent;
     text-decoration: none;
   }
 
   html {
-    font-family: 'SF-Medium', monospace;
+    font-family: 'SFMedium', monospace;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -66,6 +57,11 @@ export const GlobalStyle = createGlobalStyle`
   ol,
   ul {
     list-style: none;
+  }
+
+  button {
+    background: none;
+    border: none;
   }
 
 `;

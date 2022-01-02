@@ -16,10 +16,10 @@ type Props = {
     readonly route: string;
 }
 
-const Routes = ({ route }: Props) => {
+const Routes: React.FC<Props> = ({ route }: Props) => {
     const routes = {
         login: [
-            { exact: false, path: AppRoutes.ALL_GISTS, component: Login },
+            { exact: false, path: AppRoutes.APP_LOGIN, component: Login },
         ],
         list: [
             { exact: false, path: AppRoutes.ALL_GISTS, component: Gists },
@@ -42,8 +42,8 @@ const Routes = ({ route }: Props) => {
     return (
         <>
             <Switch>
-                {routes[route as Keys].map(item => (
-                    <Route exact={item.exact} path={item.path} component={item.component} />
+                {routes[route as Keys].map((item) => (
+                    <Route key={item.path} exact={item.exact} path={item.path} component={item.component} />
                 ))}
             </Switch>
         </>

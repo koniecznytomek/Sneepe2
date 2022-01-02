@@ -47,6 +47,7 @@
     "import/prefer-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "import/order": "off",
+    "jsx-a11y/control-has-associated-label": "off",
     "no-param-reassign": ["error", { "props": true, "ignorePropertyModificationsFor": ["state"] }],
     "prettier/prettier": "off",
     "no-use-before-define": "off",

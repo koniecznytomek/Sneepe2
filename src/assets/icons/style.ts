@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import theme from 'styled-theming';
-import { color } from '../../styles/variables';
+import { color } from 'styles/variables';
 
 export const blue = theme('theme', {
     light: css`

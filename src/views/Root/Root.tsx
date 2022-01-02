@@ -16,20 +16,21 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'styles/global';
 import { Container, Main } from './style';
 
-const Root: React.FunctionComponent = () => {
+const Root: React.FC = () => {
     const theme = useSelector(getTheme);
     const token = useSelector(getToken);
     const history = useHistory();
 
     useEffect(() => {
-        if (!token) history.push('/login');
-    }, []);
+       // if (!token) history.push('/login');
+    }, [token]);
 
     return (
         <ThemeProvider theme={{ theme }}>
             <GlobalStyle />
             <Container>
                 <Auth />
+                {token &&
                 <Main>
                     <div>
                         <Folders />
@@ -41,6 +42,7 @@ const Root: React.FunctionComponent = () => {
                         <Content />
                     </div>
                 </Main>
+                }
             </Container>
         </ThemeProvider>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Gists: React.FC = () => {
-    return <>Gist</>
+    return <>Gists</>
 };
 
 export default Gists;

@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container } from './Icons.style';
+import { Container } from './style';
 
-export const IconFolder = () => {
+export const IconFolder: React.FC = () => {
     return (
         <Container>
             <svg className="folder" viewBox="0 0 430 430">
@@ -28,7 +28,7 @@ export const IconFolder = () => {
     );
 };
 
-export const IconGists = () => {
+export const IconGists: React.FC = () => {
     return (
         <Container>
             <svg className="gists" viewBox="0 0 512 512">
@@ -38,7 +38,7 @@ export const IconGists = () => {
     );
 };
 
-export const IconStarred = () => {
+export const IconStarred: React.FC = () => {
     return (
         <Container>
             <svg className="starred" viewBox="0 0 477.899 477.899">
@@ -51,7 +51,7 @@ export const IconStarred = () => {
     );
 };
 
-export const IconTrash = () => {
+export const IconTrash: React.FC = () => {
     return (
         <Container>
             <svg className="trash" viewBox="-40 0 427 427.00131">
@@ -64,7 +64,7 @@ export const IconTrash = () => {
     );
 };
 
-export const IconLogOut = () => {
+export const IconLogOut: React.FC = () => {
     return (
         <Container>
             <svg className="logout" viewBox="0 -10 490.66667 490">
@@ -76,7 +76,7 @@ export const IconLogOut = () => {
     );
 };
 
-export const IconLight = () => {
+export const IconLight: React.FC = () => {
     return (
         <Container>
             <svg className="light" viewBox="0 0 302.4 302.4">
@@ -147,7 +147,7 @@ export const IconLight = () => {
     );
 };
 
-export const IconDark = () => {
+export const IconDark: React.FC = () => {
     return (
         <Container>
             <svg className="dark" viewBox="0 0 312.999 312.999">
@@ -169,7 +169,7 @@ export const IconDark = () => {
     );
 };
 
-export const IconUrl = () => {
+export const IconUrl: React.FC = () => {
     return (
         <Container>
             <svg className="url" viewBox="0 0 513.241 513.241">
@@ -179,7 +179,7 @@ export const IconUrl = () => {
     );
 };
 
-export const IconLock = () => {
+export const IconLock: React.FC = () => {
     return (
         <Container>
             <svg className="lock" viewBox="0 0 24 24">
@@ -192,7 +192,7 @@ export const IconLock = () => {
     );
 };
 
-export const IconColEdit = () => {
+export const IconColEdit: React.FC = () => {
     return (
         <Container>
             <svg className="coledit" viewBox="0 0 528.899 528.899">
@@ -209,7 +209,7 @@ export const IconColEdit = () => {
     );
 };
 
-export const IconColDelete = () => {
+export const IconColDelete: React.FC = () => {
     return (
         <Container>
             <svg className="coldelete" viewBox="0 0 407.521 407.521">
@@ -239,7 +239,7 @@ export const IconColDelete = () => {
     );
 };
 
-export const IconAddFile = () => {
+export const IconAddFile: React.FC = () => {
     return (
         <Container>
             <svg className="addfile" viewBox="-23 0 512 512.00072">
@@ -253,7 +253,7 @@ export const IconAddFile = () => {
     );
 };
 
-export const IconAddNote = () => {
+export const IconAddNote: React.FC = () => {
     return (
         <Container>
             <svg className="addnote" viewBox="0 0 24 24">
@@ -271,7 +271,7 @@ export const IconAddNote = () => {
     );
 };
 
-export const IconDeleteGist = () => {
+export const IconDeleteGist: React.FC = () => {
     return (
         <Container>
             <svg className="deletegist" viewBox="-40 0 427 427.00131">
@@ -284,7 +284,7 @@ export const IconDeleteGist = () => {
     );
 };
 
-export const IconConfirm = () => {
+export const IconConfirm: React.FC = () => {
     return (
         <Container>
             <svg className="confirm" viewBox="0 0 17.837 17.837">
@@ -300,7 +300,7 @@ export const IconConfirm = () => {
     );
 };
 
-export const IconCancel = () => {
+export const IconCancel: React.FC = () => {
     return (
         <Container>
             <svg className="cancel" viewBox="0 0 365.696 365.696">
@@ -310,7 +310,7 @@ export const IconCancel = () => {
     );
 };
 
-export const IconSearch = () => {
+export const IconSearch: React.FC = () => {
     return (
         <Container>
             <svg className="search" viewBox="0 0 511.999 511.999">
@@ -337,7 +337,7 @@ export const IconSearch = () => {
     );
 };
 
-export const IconMdView = () => {
+export const IconMdView: React.FC = () => {
     return (
         <Container>
             <svg className="mdview" viewBox="0 0 512.015 512.015">

@@ -10,7 +10,7 @@ import useApolloClient from 'hooks/useApolloClient';
 // router
 import { HashRouter } from 'react-router-dom';
 
-const App: React.FunctionComponent = () => {
+const App: React.FC = () => {
     const [client] = useApolloClient();
 
     return (

@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { setToken } from 'store/slices/authSlice';
 
 // hooks
+import { useHistory } from 'react-router-dom';
 import useFetchAllGists from 'hooks/useFetchAllGists';
 
 // styles
@@ -18,6 +19,7 @@ interface Auth {
 const Login: React.FC = () => {
     const [setFetch] = useFetchAllGists();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const redirect = 'http://localhost:3000/login';
 
@@ -37,8 +39,11 @@ const Login: React.FC = () => {
                     headers: { 'Accept': 'application/json' },
                 }).then((response) => {
                     if (response.data.access_token) {
+                        console.log(response.data.access_token);
                         dispatch(setToken(response.data.access_token));
                         setFetch(true);
+                       // history.push("/#/");
+                        history.replace(window.location.hash ? window.location.hash : window.location.pathname);
                     }
                 });
 
